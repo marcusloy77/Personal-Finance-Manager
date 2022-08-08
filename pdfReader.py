@@ -46,7 +46,7 @@ for i in range(7):
     running_total = running_total + total
 
 food_delivery_list = ['*EATS', 'MENULOG', 'DELIVERO', 'EASI', 'ONLINE ORDERING']
-eating_out_list = ['THE HORDEN', 'KEBAB', 'OXFORD UNDERGROUND', 'BERESFORD', 'BEANS', 'PIZZERIA', 'MCDONALDS', 'SUBWAY', 'ZAM', 'RESTURANT', 'PIZZA', 'PASTA', 'THAI', 'ITALIAN', 'RESTURANT', 'PAVILION', 'CAFE', 'PUB', 'BAR', 'CLUB', 'COFFEE', 'HOTEL', 'FOOD', 'BEER', 'SOUL ORIGIN', 'MUMBAI EXPRESS', 'SOUL ORIGIN', 'GUZMAN', 'HABERFIELD HOT BR', 'SANDWICHES', 'TACO', 'SPANISH', 'BURRITO', 'KFC', 'RED ROOSTER', 'OPORTO', 'CHICKEN', 'CHIPS', 'FISH', 'SUSHI', 'JAPANESE', 'CHINESE', 'VIETNAMESE', 'NOODLE', 'KOREAN', 'INDIAN', 'AMERICAN', 'BURGER', 'FRIES', 'CHEESECAKE', 'EATERY', 'STEAK', 'WINE', 'CHEESE', 'RICE', 'POKE', 'SALAD', 'BITE']
+eating_out_list = ['CON4', 'KEBAB', 'OXFORD UNDERGROUND', 'BERESFORD', 'BEANS', 'PIZZERIA', 'MCDONALDS', 'SUBWAY', 'ZAM', 'RESTURANT', 'PIZZA', 'PASTA', 'THAI', 'ITALIAN', 'RESTURANT', 'PAVILION', 'CAFE', 'PUB', 'BAR', 'CLUB', 'COFFEE', 'HOTEL', 'FOOD', 'BEER', 'SOUL ORIGIN', 'MUMBAI EXPRESS', 'SOUL ORIGIN', 'GUZMAN', 'HABERFIELD HOT BR', 'SANDWICHES', 'TACO', 'SPANISH', 'BURRITO', 'KFC', 'RED ROOSTER', 'OPORTO', 'CHICKEN', 'CHIPS', 'FISH', 'SUSHI', 'JAPANESE', 'CHINESE', 'VIETNAMESE', 'NOODLE', 'KOREAN', 'INDIAN', 'AMERICAN', 'BURGER', 'FRIES', 'CHEESECAKE', 'EATERY', 'STEAK', 'WINE', 'CHEESE', 'RICE', 'POKE', 'SALAD', 'BITE']
 subscriptions_list = ['PATREON', 'ONLYFANS', 'CHEGG', 'SPOTIFY', 'NETFLIX', 'STAN', 'DISNEY', 'PRIVATEINTERNET']
 activities_list = ['CINEMA', 'HOYTS', 'GOLF', 'MOSHTIX', 'BOULDERING', 'CLIMBING', 'GYM', 'MUSEUM']
 gaming_list = ['STEAM', 'BLIZZARD', 'MICROSOFT*']
@@ -56,7 +56,7 @@ petrol_list = [' BP ', 'AMPOL']
 online_orders_list = ['AMAZON MARKETPLACE']
 transfer_list = ['OSKO']
 medical_list = ['DENTAL', 'DOCTOR', 'MEDICAL', 'HOSPITAL', 'PRACTICE', 'NURSE', 'RESPIRITORY', 'CLINIC']
-
+accomodation_list = ['CBRACCOMCNTR']
 
 food_delivery = []
 eating_out = []
@@ -69,6 +69,7 @@ petrol = []
 online_orders = []
 transfer = []
 medical = []
+accomodation = []
 other = []
 
 for purchase in purchase_list_long:
@@ -141,6 +142,12 @@ for purchase in purchase_list_long:
         for health_item in medical_list:
             if health_item in purchase['type']:
                 medical.append(purchase)
+                not_assigned = False
+                break
+    if not_assigned:
+        for accom in accomodation_list:
+            if accom in purchase['type']:
+                accomodation.append(purchase)
                 not_assigned = False
                 break
     if not_assigned:
